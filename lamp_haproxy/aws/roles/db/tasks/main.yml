@@ -2,7 +2,7 @@
 # This role will install MySQL and create db user and give permissions.
 
 - name: Install Mysql package
-  yum:
+  apt:
     name: "{{ item }}"
     state: present
   with_items:
