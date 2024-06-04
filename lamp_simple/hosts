@@ -1,9 +1,15 @@
+[webservers:vars]
+ansible_ssh_private_key_file = ~/.ssh/hosts/Kube.pem
 [webservers]
 Kube-N1
 
+[dbservers:vars]
+ansible_ssh_private_key_file = ~/.ssh/hosts/Kube.pem
 [dbservers]
 Kube-N2
 
-[all]
+[all:vars]
+ansible_ssh_private_key_file = ~/.ssh/hosts/Kube.pem
+[a]
 Kube-N1
 Kube-N2
