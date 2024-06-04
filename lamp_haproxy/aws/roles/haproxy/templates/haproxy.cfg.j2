@@ -1,11 +1,11 @@
 global
     log         127.0.0.1 local2 
 
-    chroot      /var/lib/haproxy
+    chubuntu      /var/lib/haproxy
     pidfile     /var/run/haproxy.pid
     maxconn     4000
-    user        root
-    group       root
+    user        ubuntu
+    group       ubuntu
     daemon
 
     # turn on stats unix socket
