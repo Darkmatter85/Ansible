@@ -1,0 +1,23 @@
+---
+  - name: Install nginx
+    hosts: all
+    tasks:
+      - name: Install nginx..
+        become: yes
+        apt: 
+          update_cache: yes  
+          name: nginx,mysql-server
+
+      - name: nginx started
+        service:
+            name: nginx
+            state: started
+      - name: nginx stopped
+        systemd:
+            name: nginx
+            state: stopped
+              #    handlers:
+              #        - name: Restart nginx
+              # ansible.builtin.service:
+              #name: nginx
+              #state: restarted
