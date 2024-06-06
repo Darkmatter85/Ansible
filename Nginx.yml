@@ -1,6 +1,7 @@
 ---
   - name: Install nginx
     hosts: all
+    become: yes
     tasks:
 #      - name: Install nginx..
 #        become: yes
@@ -14,8 +15,8 @@
 #            state: started 
       - name: nginx stopped
         systemd:
-            name: nginx
-            state: stopped
+          name: nginx
+          state: stopped
               #    handlers:
               #        - name: Restart nginx
               # ansible.builtin.service:
