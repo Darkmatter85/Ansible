@@ -2,6 +2,7 @@
   - name: Install nginx
     hosts: all
     become: yes
+    gather_facts: no
     tasks:
 #      - name: Install nginx..
 #        become: yes
