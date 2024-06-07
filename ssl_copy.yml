@@ -1,6 +1,7 @@
 ---
   - name: Copy file and restart nginx
-    host: all
+    hosts: all
+    gather_facts: no
     become: yes
     tasks:
       - name: Create file
@@ -20,4 +21,3 @@
         systemd:
           name: nginx
           state: restarted
-          
