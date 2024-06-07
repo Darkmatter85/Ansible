@@ -1,0 +1,23 @@
+---
+  - name: Copy file and restart nginx
+    host: all
+    become: yes
+    tasks:
+      - name: Create file
+        file:
+        path: /etc/nginx/test.conf
+        state: touch
+      - name: Copy nginx configuration
+        ansible.builtin.copy:
+          src: ./test.conf
+          dest: /etc/nginx/test.conf
+        # The task is always reported as changed
+        changed_when: True
+        notify: Restart nginx
+    
+    handlers: 
+      - name: Restart nginx
+        systemd:
+          name: nginx
+          state: restarted
+          
