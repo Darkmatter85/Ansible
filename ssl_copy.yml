@@ -6,8 +6,8 @@
     tasks:
       - name: Create file
         file:
-        path: /etc/nginx/test.conf
-        state: touch
+          path: /etc/nginx/test.conf
+          state: touch
       - name: Copy nginx configuration
         ansible.builtin.copy:
           src: test.conf
